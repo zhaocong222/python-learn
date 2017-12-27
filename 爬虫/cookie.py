@@ -21,7 +21,7 @@ cookie_handler = urllib.request.HTTPCookieProcessor(cookie)
 opener = urllib.request.build_opener(cookie_handler)
 
 #自定义opener的addheaders的参数，可以赋值http报头参数
-user_agent = r'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36'
+user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36'
 headers = {'User-Agent': user_agent, 'Connection': 'keep-alive'}
 
 #renren网的登录接口
