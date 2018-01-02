@@ -16,7 +16,7 @@ class ItcastSpider(scrapy.Spider):
         teacher_list = response.xpath('//div[@class="li_txt"]')
         
         # 所有老师信息的列表集合
-        teacherItem = []
+        #teacherItem = []
         # 遍历根节点集合
         # 遍历根节点集合
         for each in teacher_list:
@@ -33,8 +33,12 @@ class ItcastSpider(scrapy.Spider):
             item['name'] = name[0]
             item['title'] = title[0]
             item['info'] = info[0]
+
+            #利用yield
+            #将获取的数据交给管道 pipelines文件
+            yield item
+
+            #teacherItem.append(item)
             
-            teacherItem.append(item)
-            
-        return teacherItem
+        #return teacherItem
 

@@ -6,11 +6,12 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import json
 
-class ItcastPipeline(object):
-    #可选初始化方法
+class TencentPipeline(object):
+    
+   #可选初始化方法
     def __init__(self):
         #创建1个文件
-        self.filename = open("teacher.json","w")
+        self.filename = open("position.json","w")
 
     #必须有的方法 处理数据, item就是传过来的数据
     def process_item(self, item, spider):
