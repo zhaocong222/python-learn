@@ -43,6 +43,8 @@ try:
         vote = site.xpath('.//i')[0].text
         # 评论数
         comments = site.xpath('.//i')[1].text
+        print(imgUrl)
+
 
 except Exception as e:
     print(e)
