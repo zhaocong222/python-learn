@@ -24,6 +24,18 @@ class TencentSpider(CrawlSpider):
 
     # 指定的回调函数
     def parseTencent(self, response):
+        #如果不设置rule里的follow 默认为false, 获取的url就是start_urls这个页面里匹配的url，不会更近
+        '''
+        http://hr.tencent.com/position.php?&start=10
+        http://hr.tencent.com/position.php?&start=2740
+        http://hr.tencent.com/position.php?&start=70
+        http://hr.tencent.com/position.php?&start=60
+        http://hr.tencent.com/position.php?&start=50
+        http://hr.tencent.com/position.php?&start=40
+        http://hr.tencent.com/position.php?&start=30
+        http://hr.tencent.com/position.php?&start=20
+        '''
+        """
         for each in response.xpath("//tr[@class='even'] | //tr[@class='odd']"):
             item = TencentItem()
             # 职位名称
@@ -40,3 +52,4 @@ class TencentSpider(CrawlSpider):
             item['publishTime'] = each.xpath("./td[5]/text()").extract()[0]
           
             yield item
+       """
